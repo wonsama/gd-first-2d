@@ -10,8 +10,13 @@ config_version=4
 
 [application]
 
-config/name="gd-temp"
+config/name="gd-first-2d"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=480
+window/size/height=720
 
 [physics]
 
