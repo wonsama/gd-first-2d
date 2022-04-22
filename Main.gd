@@ -7,25 +7,31 @@ func _ready():
 	# 여기에 randomize() 호출을 추가하여 
 	# 게임이 실행될 때마다 난수 생성기가 다른 난수를 생성하도록 합니다.
 	randomize()
-	new_game()
+	#new_game()
 	
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$Hud.show_game_over()
 
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	
+	$Hud.update_score(score)
+	$Hud.show_message("Get Ready")
+	
+	get_tree().call_group("mobs","queue_free")
 
 
 func _on_ScoreTimer_timeout():
 	score += 1
+	$Hud.update_score(score)
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()
-
 
 func _on_MobTimer_timeout():
 	# Mob 장면의 새 인스턴스를 만듭니다.
