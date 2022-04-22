@@ -8,11 +8,11 @@ func show_message(text):
 	$MessageTimer.start()
 
 func show_game_over():
-	show_message("Game Over")
+	show_message("게임 종료")
 	# MessageTimer가 카운트다운될 때까지 기다리십시오..
 	yield($MessageTimer, "timeout")
 
-	$Message.text = "Dodge the\nCreeps!"
+	$Message.text = "오징어 피하기 !"
 	$Message.show()
 	# 원샷 타이머를 만들고 완료될 때까지 기다립니다..
 	yield(get_tree().create_timer(1), "timeout")

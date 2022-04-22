@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Dongle-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Hud.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 1 )
+
+[sub_resource type="InputEventAction" id=2]
+action = "start_game"
+
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -30,7 +36,7 @@ margin_top = -79.5
 margin_right = 183.0
 margin_bottom = 79.5
 custom_fonts/font = SubResource( 1 )
-text = "Dodge the Creeps !"
+text = "오징어 피하기 !"
 align = 1
 autowrap = true
 
@@ -44,7 +50,8 @@ margin_top = -200.0
 margin_right = 92.0
 margin_bottom = -100.0
 custom_fonts/font = SubResource( 1 )
-text = "Start"
+shortcut = SubResource( 3 )
+text = "시작"
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
