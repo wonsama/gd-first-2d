@@ -65,6 +65,8 @@ func _on_Player_body_entered(body):
 	# $CollisionShape2D.disabled = true 하면 물리 엔진 작업 처리 시 오류 발생 될 수 있어
 	# set_deferred 를 통해 지연 처리 하도록 함.
 	$CollisionShape2D.set_deferred("disabled", true)
+	
+
 
 func start(pos):
 	position = pos
